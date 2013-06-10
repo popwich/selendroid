@@ -201,6 +201,22 @@ driver.quit();</code></pre>
                 interact
                 with this element are routed to this device. If the test session has ended, the emulator will be stopped
                 automatically.</p>
+            <h3>Additional parameters in the desired capabilities</h3>
+            <p>Please note, that this parameters are all optional.</p>
+            <h4>locale</h4>
+            <p>Specify the locale of the device that should be used in the test session.
+                If the device is an emulator, during start the locale will be automatically configured. E.g. <code>de_CH</code></p>
+
+            <h4>screenSize</h4>
+            <p>Specify the screen size of the device: e.g. <code>720x1280</code></p>
+
+            <h4>display</h4>
+            <p>Specify the display number that is used to start the emulator on. Supported only in Linux platforms. E.g. <code>1</code></p>
+
+            <h4>preSessionAdbCommands</h4>
+            <p>A list of adb commands that will be executed on the target device before selendroid-server will be started. E.g.
+                <code>shell setprop name selendroid</code>, please note that the adb command itself and the
+                serial will be added by selendroid automatically.</p>
 
             <h2 id="androidDevices">Devices</h2>
 
