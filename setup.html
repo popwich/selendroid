@@ -129,10 +129,10 @@
     },
     "build": {
         "browserName": "selendroid",
-        "version": "dev"
+        "version": "0.4.0"
     },
     "supportedApps": [{
-        "appId": "io.selendroid.testapp:0.4-SNAPSHOT",
+        "appId": "io.selendroid.testapp:0.4.0",
         "mainActivity": "io.selendroid.testapp.HomeScreenActivity",
         "basePackage": "io.selendroid.testapp"
     }],
@@ -176,7 +176,7 @@
 <pre><code>SelendroidCapabilities capa =
   SelendroidCapabilities.emulator(
     DeviceTargetPlatform.ANDROID16,
-      "io.selendroid.testapp:0.4");
+      "io.selendroid.testapp:0.4.0");
 
 WebDriver driver = new SelendroidDriver("http://localhost:5555/wd/hub", capa);
 WebElement inputField = driver.findElement(By.id("my_text_field"));
