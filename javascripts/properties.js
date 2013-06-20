@@ -14,8 +14,8 @@
 
 $(document).ready(function ($) {
 
-    var version = "0.4.0";
-    var downloadFile = "https://s3-us-west-1.amazonaws.com/selendroid/selendroid-standalone-0.4.0.jar";
+    var version = "0.4.1";
+    var downloadFile = "https://s3-us-west-1.amazonaws.com/selendroid/selendroid-standalone-0.4.1.jar";
     var github = "https://github.com/dominikdary/selendroid/";
 
     $("#download_me").attr('href', downloadFile);
@@ -28,6 +28,7 @@ $(document).ready(function ($) {
 
 buildFooter = function () {
     $("#footer_wrap").html('<a href="https://github.com/DominikDary/selendroid"></a>' +
+        '<a href="http://groups.google.com/group/selendroid" class="button">Selendroid Mailing list</a>'+
         'is maintained by <a href="https://github.com/DominikDary/selendroid/blob/master/AUTHORS">Selendroid authors</a>.' +
         '<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>');
 };
