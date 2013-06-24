@@ -99,7 +99,7 @@
 
             <p>When you want to play around with selendroid, you can use our app that we use to verify that actually
                 selendroid works as expected. You can download this app <a
-                        href="https://s3-us-west-1.amazonaws.com/selendroid/selendroid-test-app-0.4.1.apk">here</a>
+                        href="https://s3-us-west-1.amazonaws.com/selendroid/selendroid-test-app-0.4.2.apk">here</a>
             </p>
 
             <h1 id="launchingSelendroid">Launching selendroid</h1>
@@ -107,7 +107,7 @@
             <p>Download <a href="#download_me">selendroid-standalone.jar</a> (right top section of this page)</p>
             </p>
             cd to the folder where you downloaded the jar, and run
-            <pre><code>java -jar selendroid-standalone-0.4.jar -app selendroid-test-app-0.4.apk</code></pre>
+            <pre><code>java -jar selendroid-standalone-0.4.2.jar -app selendroid-test-app-0.4.2.apk</code></pre>
 
             <p>Selendroid-standalone will start a http server on port 5555 and will scan all Android virtual devices
                 (avd)
@@ -129,10 +129,10 @@
     },
     "build": {
         "browserName": "selendroid",
-        "version": "0.4.0"
+        "version": "0.4.2"
     },
     "supportedApps": [{
-        "appId": "io.selendroid.testapp:0.4.0",
+        "appId": "io.selendroid.testapp:0.4.2",
         "mainActivity": "io.selendroid.testapp.HomeScreenActivity",
         "basePackage": "io.selendroid.testapp"
     }],
@@ -171,7 +171,7 @@
 <pre><code>SelendroidCapabilities capa =
   SelendroidCapabilities.emulator(
     DeviceTargetPlatform.ANDROID16,
-      "io.selendroid.testapp:0.4.0");
+      "io.selendroid.testapp:0.4.2");
 
 WebDriver driver = new SelendroidDriver("http://localhost:5555/wd/hub", capa);
 WebElement inputField = driver.findElement(By.id("my_text_field"));
