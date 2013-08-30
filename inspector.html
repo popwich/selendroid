@@ -9,7 +9,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/properties.js"></script>
 
-    <title>Selendroid</title>
+    <title>Selendroid Inspector</title>
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
@@ -41,7 +41,7 @@
 
         <h2>&quot;Selenium for Android Apps&quot; <br/>(Test automate native or hybrid Android apps with Selendroid.)
         </h2>
-        <a href="https://github.com/DominikDary/selendroid" class="button">
+        <a href="https://github.com/selendroid/selendroid" class="button">
             <small>View project on</small>
             GitHub</a>
 
@@ -62,35 +62,16 @@
             <h2>Features</h2>
             <ol>
                 <li>View hierarchy</li>
-                <li>View properties</li>
-                <li>Display the capabilities</li>
-                <li>UI Snapshot with view locator</li>
+                <li>View UI element properties</li>
+                <li>UI screenshot with view locator</li>
+                <li>Record the click actions</li>
+                <li>Display the html of a web view</li>
+                <li>XPath expression validator</li>
             </ol>
 
-            <h3>Note:</h3>
-            <p>The inspector currently does not support inspecting web views. For getting the html page source you can type
-            in the selendroid shell:</p>
-
-<pre><code>driver.switch_to.window('WEBVIEW')
-driver.page_source</code></pre>
-
             <h3>Where do I get it?</h3>
-            <p>The web app is running on: <a href="http://localhost:5555/inspector">http://localhost:5555/inspector</a></p>
-
-
-            <h2>Selendroid Shell</h2>
-            <p>The selendroid gem has a build in Ruby shell:</p>
-            <pre><code>selendroid shell &lt;pathToYourAPK&gt;</code></pre>
-            <p><img src="images/selendroidShell.png"></p>
-            <h3>Using the shell</h3>
-            <p>By default the selndroid server and webdriver client are started automatically. If you would like to do it manually, just type</p>
-            <pre><code>start_selendroid_server(nil)</code></pre>
-            <p>or</p>
-            <pre><code>start_selendroid_client</code></pre>
-            <p>If you are in the shell and would like to get help, just type:</p>
-            <pre><code>helpme</code></pre>
-            <p>To start the selendroid inspector in your default browser, just type:</p>
-            <pre><code>inspector</code></pre>
+            <p>When you have started selendroid-standalone and you have started a test session,
+                you can find the web app at: <a href="http://localhost:5555/inspector">http://localhost:5555/inspector</a></p>
         </section>
 
         <aside id="sidebar">

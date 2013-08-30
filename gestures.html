@@ -41,7 +41,7 @@
 
         <h2>&quot;Selenium for Android Apps&quot; <br/>(Test automate native or hybrid Android apps with Selendroid.)
         </h2>
-        <a href="https://github.com/DominikDary/selendroid" class="button">
+        <a href="https://github.com/selendroid/selendroid" class="button">
             <small>View project on</small>
             GitHub</a>
 
@@ -53,8 +53,21 @@
     <div class="inner clearfix">
         <section id="main-content">
             <h1>Mobile Gestures</h1>
-            <p>Selendroid is implementing the <a href="http://code.google.com/p/selenium/wiki/AdvancedUserInteractions">Advanced User Interactions API</a>. This is a new, more comprehensive API for describing actions a user can perform on a web page.
+            <p>Selendroid is implementing the <a href="http://code.google.com/p/selenium/wiki/AdvancedUserInteractions">Advanced User Interactions API</a>.
+                This is a new, more comprehensive API for describing actions a user can perform on an app.
                 This includes actions such as drag and drop or clicking multiple elements while holding down the Control key.</p>
+            <h2 id="elementInteractions">Supported Interactions are e.g:</h2>
+            <ol>
+                <li>doubleTap(WebElement onElement)</li>
+                <li>down(int x, int y)</li>
+                <li>flick(int xSpeed, int ySpeed)</li>
+                <li>flick(WebElement onElement, int xOffset, int yOffset, int speed)</li>
+                <li>longPress(WebElement onElement)</li>
+                <li>move(int x, int y)</li>
+                <li>singleTap(WebElement onElement)</li>
+                <li>up(int x, int y)</li>
+            </ol>
+
             <h2>Examples</h2>
             <h3>How to swipe from right to left</h3>
             <p>Ruby:

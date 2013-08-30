@@ -41,7 +41,7 @@
 
         <h2>&quot;Selenium for Android Apps&quot; <br/>(Test automate native or hybrid Android apps with Selendroid.)
         </h2>
-        <a href="https://github.com/DominikDary/selendroid" class="button">
+        <a href="https://github.com/selendroid/selendroid" class="button">
             <small>View project on</small>
             GitHub</a>
 
@@ -64,7 +64,7 @@
         <br>
             <h1>Native Elements</h1>
 
-            <p>To switch to the <b>native</b> mode:</p>
+            <p>To switch to the <b>native</b> context:</p>
 
             <p>Ruby:
             <pre><code>driver.switch_to.window('NATIVE_APP')</code></pre>
@@ -85,7 +85,7 @@
                     <td>Id</td><td>Finds the element by Id.</td>
                 </tr>
                 <tr>
-                    <td>name</td><td>Find the element by name.</td>
+                    <td>name</td><td>Find the element by content description (accessibility label).</td>
                 </tr>
                 <tr>
                     <td>link text</td><td>Find the element by text.</td>
@@ -94,10 +94,13 @@
                     <td>partial link text</td><td>Find the element by partial text.</td>
                 </tr>
                 <tr>
-                    <td>class</td><td>Find the element by class.</td>
+                    <td>class</td><td>Find the element by full class name (e.g. android.widget.Button).</td>
                 </tr>
                 <tr>
-                    <td>tag name</td><td>Find the element by tag name.</td>
+                    <td>tag name</td><td>Find the element by simple class name (e.g. Button).</td>
+                </tr>
+                <tr>
+                    <td>xpath</td><td>Find the element by a xpath expression.</td>
                 </tr>
             </table>
             <h3 id="findElements">Native locator examples</h3>
@@ -171,6 +174,19 @@
             </p>
             </p>
 
+            <h2>xpath</h2>
+            <p>XPath is the language used for locating nodes in an XML document. XPath extends beyond (as well as supporting)
+                the simple methods of locating by id or name attributes, and opens up all sorts of new possibilities such
+                as locating the third Button on the activity.
+            <p>Ruby:
+            <pre><code>driver.find_element(:xpath,"//Button[@id='buttonTest']")</code></pre>
+            </p>
+
+            <p>Java:
+            <pre><code>driver.findElement(By.xpath("//Button[@id='buttonTest']"));</code></pre>
+            </p>
+            </p>
+
             <h2 id="elementInteractions">Supported Element Interactions</h2>
             <ol>
                 <li>Get Text</li>
@@ -199,7 +215,7 @@
 
 <h3>Overview about available keys</h3>
 
-            <p>(The original list is documented in the interface: <a href="https://github.com/DominikDary/selendroid/blob/master/selendroid-client/src/main/java/org/openqa/selendroid/SelendroidKeys.java">SelendroidKeys</a>)</p>
+            <p>(The original list is documented in the interface: <a href="https://github.com/selendroid/selendroid/blob/master/selendroid-client/src/main/java/org/openqa/selendroid/SelendroidKeys.java">SelendroidKeys</a>)</p>
 
             <table>
                 <thead><tr>

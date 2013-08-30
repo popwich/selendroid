@@ -41,7 +41,7 @@
 
         <h2>&quot;Selenium for Android Apps&quot; <br/>(Test automate native or hybrid Android apps with Selendroid.)
         </h2>
-        <a href="https://github.com/DominikDary/selendroid" class="button">
+        <a href="https://github.com/selendroid/selendroid" class="button">
             <small>View project on</small>
             GitHub</a>
 
@@ -71,13 +71,15 @@
             <h1>Setup</h1>
 
             <p>Selendroid is based on the Android instrumentation framework, so only testing one specific app
-                is
-                supported. Like Selenium we offer as well a selendroid standalone jar.</p>
+                is currently supported. Selendroid can only be used if your application has the permission:
+                <pre><code><uses-permission android:name="android.**permission.INTERNET"/></code></pre>
+                Like the Selenium project, we offer as well jar (selendroid-standalone), that
+                contains all the dependencies.</p>
 
             <h1 id="systemRequirements">System requirements</h1>
 
             <ol>
-                <li>Selendroid is tested to run on Mac and Linux. <a href="https://github.com/DominikDary/selendroid/issues/42">@See for windows related questions</a></li>
+                <li>Selendroid is tested to run on Mac, Linux and Windows.</li>
                 <li>Java sdk (minimum 1.6) is installed and JAVA_HOME is configured</li>
                 <li>Latest <a href="http://developer.android.com/sdk/index.html">Android-Sdk</a> is installed and
                     ANDROID_HOME is set.
@@ -99,7 +101,7 @@
 
             <p>When you want to play around with selendroid, you can use our app that we use to verify that actually
                 selendroid works as expected. You can download this app <a
-                        href="https://s3-us-west-1.amazonaws.com/selendroid/selendroid-test-app-0.4.2.apk">here</a>
+                        href="https://s3-us-west-1.amazonaws.com/selendroid/selendroid-test-app-0.5.0.apk">here</a>
             </p>
 
             <h1 id="launchingSelendroid">Launching selendroid</h1>
@@ -107,7 +109,7 @@
             <p>Download <a href="#download_me">selendroid-standalone.jar</a> (right top section of this page)</p>
             </p>
             cd to the folder where you downloaded the jar, and run
-            <pre><code>java -jar selendroid-standalone-0.4.2.jar -app selendroid-test-app-0.4.2.apk</code></pre>
+            <pre><code>java -jar selendroid-standalone-0.5.0.jar -app selendroid-test-app-0.5.0.apk</code></pre>
 
             <p>Selendroid-standalone will start a http server on port 5555 and will scan all Android virtual devices
                 (avd)
@@ -132,7 +134,7 @@
         "version": "0.4.2"
     },
     "supportedApps": [{
-        "appId": "io.selendroid.testapp:0.4.2",
+        "appId": "io.selendroid.testapp:0.5.0",
         "mainActivity": "io.selendroid.testapp.HomeScreenActivity",
         "basePackage": "io.selendroid.testapp"
     }],
@@ -170,8 +172,8 @@
             <p>The selendroid client libraries are as well part of the standalone jar.</p>
 <pre><code>SelendroidCapabilities capa =
   SelendroidCapabilities.emulator(
-    DeviceTargetPlatform.ANDROID16,
-      "io.selendroid.testapp:0.4.2");
+    DeviceTargetPlatform.ANDROID18,
+      "io.selendroid.testapp:0.5.0");
 
 WebDriver driver = new SelendroidDriver("http://localhost:5555/wd/hub", capa);
 WebElement inputField = driver.findElement(By.id("my_text_field"));
@@ -184,7 +186,7 @@ driver.quit();</code></pre>
                 must be provided. Based on that information an matching Android device will identified. Otherwise the
                 test session
                 will not be started. Important: before filing a bug please make sure the desired capabilities in your 
-                test are matching the on available on the <a href="http://lcoalhost:5555/wd/hub/status">server</a>.    
+                test are matching the on available on the <a href="http://localhost:5555/wd/hub/status">server</a>.
                 </p>
 
             <p>After the found device has been initialized, a customized selendroid-server will be created and will
@@ -192,7 +194,7 @@ driver.quit();</code></pre>
                 installed on the device. The app under test will be installed as well and then the selendroid-server on
                 the device will be automatically started.</p>
 
-            <p>Ater the test session has been successfully initialized, the test commands like finding an element and
+            <p>After the test session has been successfully initialized, the test commands like finding an element and
                 interact
                 with this element are routed to this device. If the test session has ended, the emulator will be stopped
                 automatically.</p>
@@ -223,14 +225,14 @@ driver.quit();</code></pre>
 
             <p>Selendroid is only able to start and stop Android Virtual Devices (Avd) that already exist. After an
                 emulator has been created, it is recommended to do the first start manually to verify everything works
-                fine. When creating avds please read the following configuration recommondations:</p>
+                fine. When creating avds please read the following configuration recommendations:</p>
             <ul>
                 <li>Use whenever possible the Intel x86 ABI</li>
                 <li>
                     Install
                     <a href="http://software.intel.com/en-us/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-microsoft">Intel
                         x86 Emulator Accelerator</a>
-                    on Mac and Windows and use KVM on Linux to enable hardware acceleration to massivly speed up the
+                    on Mac and Windows and use KVM on Linux to enable hardware acceleration to massively speed up the
                     Emulator
                 </li>
                 <li>Use at least 1024MB of RAM per emulator</li>
