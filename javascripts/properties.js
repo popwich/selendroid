@@ -14,8 +14,8 @@
 
 $(document).ready(function ($) {
 
-    var version = "0.5.0";
-    var downloadFile = "https://s3-us-west-1.amazonaws.com/selendroid/selendroid-standalone-0.5.0-with-dependencies.jar";
+    var version = "0.5.1";
+    var downloadFile = "https://s3-us-west-1.amazonaws.com/selendroid/selendroid-standalone-0.5.1-with-dependencies.jar";
     var github = "https://github.com/selendroid/selendroid/";
 
     $("#download_me").attr('href', downloadFile);
