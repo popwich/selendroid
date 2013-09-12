@@ -62,7 +62,7 @@
             </ol>
             <p>Now you can start the Grid with the selendroid-grid-plugin that contains the proxy io.selendroid.grid.SelendroidSessionProxy and a simple capability matcher io.selendroid.grid.SelendroidCapabilityMatcher.</p>
 <pre><code>java -Dfile.encoding=UTF-8 -cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" org.openqa.grid.selenium.GridLauncher -capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher -role hub -host 127.0.0.1 -port 4444</code></pre>
-<p>Before registering a selendroid-node into the Grid please make sure the selendroid-standalone server is already started. Registering nodes to this grid can be done using this registration request (file name selendroid-nodes-config.json):</p>
+<p>Before registering a selendroid-node into the Grid, please make sure the selendroid-standalone server is already <a href="http://selendroid.io/setup.html#launchingSelendroid">started</a>. Registering nodes to this grid can be done using this registration request (file name selendroid-nodes-config.json):</p>
 <pre><code>{
 "capabilities": [{
     "deviceName": "emulator",
