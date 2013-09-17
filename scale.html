@@ -64,28 +64,23 @@
 <pre><code>java -Dfile.encoding=UTF-8 -cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" org.openqa.grid.selenium.GridLauncher -capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher -role hub -host 127.0.0.1 -port 4444</code></pre>
 <p>Before registering a selendroid-node into the Grid, please make sure the selendroid-standalone server is already <a href="http://selendroid.io/setup.html#launchingSelendroid">started</a>. Registering nodes to this grid can be done using this registration request (file name selendroid-nodes-config.json):</p>
 <pre><code>{
-"capabilities": [{
-    "deviceName": "emulator",
-    "browserName": "selendroid",
-    "version":"",
-    "maxInstances": 1,
-    "locale": "UK",
-    "sdkVersion": "4.1",
-    "screenSize": "480x800",
-    "aut": "selendroid-test-app:0.5.0",
-    "maxInstances" = 1,
-    "rotatable" = true,
-    "platform":"ANDROID",
-    "takesScreenshot" = true
-    }],
-    "configuration": {
-    "maxSession": 1,
-    "register": true,
-    "hubHost": "localhost",
-    "hubPort": 4444,
-    "remoteHost":"http://localhost:5555",
-    "proxy":"io.selendroid.grid.SelendroidSessionProxy"
-    }
+	"capabilities": [{
+		"browserName": "selendroid",
+		"maxInstances": 1,
+		"locale": "en_GB",
+		"androidTarget": "ANDROID16",
+		"screenSize": "480x800",
+		"aut": "io.selendroid.testapp:0.5.1",
+		"maxInstances" = 1
+	}],
+	"configuration": {
+		"maxSession": 1,
+		"register": true,
+		"hubHost": "localhost",
+		"hubPort": 4444,
+		"remoteHost": "http://localhost:5555",
+		"proxy": "io.selendroid.grid.SelendroidSessionProxy"
+	}
 }</code></pre>
         <p>The node registration can be done by sending the node config to the hub:</p>
 <pre><code>curl -H "Content-Type: application/json" -X POST --data @selendroid-nodes-config.json http://localhost:4444/grid/register</code></pre>
