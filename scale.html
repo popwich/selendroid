@@ -99,7 +99,8 @@
 	}
 }</code></pre>
         <p>The node registration can be done by sending the node config to the hub using curl:</p>
-<pre><code>curl -H "Content-Type: application/json" -X POST --data @selendroid-nodes-config.json http://localhost:4444/grid/register</code></pre>
+<pre><code>curl -H "Content-Type: application/json" -X POST --data @selendroid-nodes-config.json \
+http://localhost:4444/grid/register</code></pre>
         <p>Now you can verify in the <a href="http://localhost:4444/grid/console">Selenium Grid console</a>, that the node has been added to the grid hub.</p>
         <h2 id="runTests">Run a test</h2>
         <p>When defining desired capabilities, please verify that they are present in the grid hub and they match to the capablities of the selendroid-standalone server.
