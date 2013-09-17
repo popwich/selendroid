@@ -81,7 +81,8 @@
 <pre><code>java -Dfile.encoding=UTF-8 \ 
 -cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" \
 org.openqa.grid.selenium.GridLauncher \ 
--capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher -role hub -host 127.0.0.1 -port 4444</code></pre>
+-capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher \
+-role hub -host 127.0.0.1 -port 4444</code></pre>
 <p>Registering nodes to this grid can be done using this registration request (file name <code>selendroid-nodes-config.json</code>):</p>
 <pre><code>{
 	"capabilities": [{
