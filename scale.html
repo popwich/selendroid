@@ -75,9 +75,11 @@
             </ol>
             <h2 id="start">Start all servers</h2>
             <p>First, the selendroid-standalone should be started (more details you find <a href="http://selendroid.io/setup.html#launchingSelendroid">here</a>):</p>
-            <pre><code>java -jar selendroid-standalone-0.5.1-with-dependencies.jar -app selendroid-test-app-0.5.1.apk</code></pre>
+            <pre><code>java -jar selendroid-standalone-0.5.1-with-dependencies.jar \
+            -app selendroid-test-app-0.5.1.apk</code></pre>
             <p>Now you can start the Grid with the <code>selendroid-grid-plugin</code> that contains the proxy <code>io.selendroid.grid.SelendroidSessionProxy</code> and a simple capability matcher <code>io.selendroid.grid.SelendroidCapabilityMatcher</code>.</p>
-<pre><code>java -Dfile.encoding=UTF-8 -cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" org.openqa.grid.selenium.GridLauncher -capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher -role hub -host 127.0.0.1 -port 4444</code></pre>
+<pre><code>java -Dfile.encoding=UTF-8 \ 
+-cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" org.openqa.grid.selenium.GridLauncher -capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher -role hub -host 127.0.0.1 -port 4444</code></pre>
 <p>Registering nodes to this grid can be done using this registration request (file name <code>selendroid-nodes-config.json</code>):</p>
 <pre><code>{
 	"capabilities": [{
@@ -99,7 +101,8 @@
 	}
 }</code></pre>
         <p>The node registration can be done by sending the node config to the hub using curl:</p>
-<pre><code>curl -H "Content-Type: application/json" -X POST --data @selendroid-nodes-config.json \
+<pre><code>curl -H "Content-Type: application/json" -X POST \ 
+--data @selendroid-nodes-config.json \
 http://localhost:4444/grid/register</code></pre>
         <p>Now you can verify in the <a href="http://localhost:4444/grid/console">Selenium Grid console</a>, that the node has been added to the grid hub.</p>
         <h2 id="runTests">Run a test</h2>
