@@ -152,7 +152,8 @@ adb forward tcp:8080 tcp:8080</code></pre>
                 </li>
                 <li>install the server via <code>adb install -r selendroid-test-app/target/selendroid-test-app-0.X.apk</code>
                 </li>
-                <li>start the server: <code>adb shell am instrument -e main_activity 'io.selendroid.testapp.HomeScreenActivity'
+                <li>start the server: <code>adb shell am instrument \ 
+                -e main_activity 'io.selendroid.testapp.HomeScreenActivity' \
                     io.selendroid/.ServerInstrumentation</code></li>
                 <li>Do the port forwarding: <code>adb forward tcp:8080 tcp:8080</li></code>
                 <li><code>cd selendroid-test-app</code></li>
